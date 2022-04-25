@@ -1,45 +1,54 @@
-    async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
-        const photographers = [
-            {
-                "name": "Ma data test",
-                "id": 1,
-                "city": "Paris",
-                "country": "France",
-                "tagline": "Ceci est ma data test",
-                "price": 400,
-                "portrait": "account.png"
-            },
-            {
-                "name": "Autre data test",
-                "id": 2,
-                "city": "Londres",
-                "country": "UK",
-                "tagline": "Ceci est ma data test 2",
-                "price": 500,
-                "portrait": "account.png"
-            },
-        ]
-        // et bien retourner le tableau photographers seulement une fois
-        return ({
-            photographers: [...photographers, ...photographers, ...photographers]})
+function buildCard(photographers) {
+    const cardContainer = document.getElementById('photographer_section')
+
+    // create card
+    const card = document.createElement('article')
+    card.className = 'card'
+    cardContainer.appendChild(card)
+
+    // create link card
+    const link = document.createElement('a')
+    link.className = 'photographers-link'
+    link.href = '/photographer.html?id=' + photographers[i].id
+    card.appendChild(link)
+
+    // create img card
+    const img = document.createElement('img')
+    img.className = 'photograph-img'
+    // not working
+    img.src = 'assets/photographers/' + photographers[i].portrait
+    link.appendChild(img)
+
+    // create photographer name
+    const name = document.createElement('h2')
+    name.className = 'photograph-name'
+    name.innerHTML = photographers[i].name
+    link.appendChild(name)
+
+    // create photographer city
+    const city = document.createElement('p')
+    city.className = 'photograph-city'
+    city.innerHTML = photographers[i].city
+    card.appendChild(city)
+
+    // create photographer tagline
+    const tagline = document.createElement('p')
+    tagline.className = 'photograph-tagline'
+    tagline.innerHTML = photographers[i].tagline
+    card.appendChild(tagline)
+
+    // create photographer price
+    const price = document.createElement('p')
+    price.className = 'photograph-price'
+    price.innerHTML = photographers[i].price + '€ /jour'
+    card.appendChild(price)
+}
+fetch('https://raw.githubusercontent.com/LoopDavid/Front-End-Fisheye/main/data/photographers.json')
+.then(res => res.json())
+.then(data => {
+    for(i in data.photographers) {
+        const photographers = data.photographers
+        buildCard(photographers)
     }
+})
 
-    async function displayData(photographers) {
-        const photographersSection = document.querySelector(".photographer_section");
-
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerFactory(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
-        });
-    };
-
-    async function init() {
-        // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
-        displayData(photographers);
-    };
-    
-    init();
-    

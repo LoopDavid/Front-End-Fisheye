@@ -1,0 +1,86 @@
+@import url("photographer.css");
+
+$city : #901C1C;
+$name : #D3573C;
+$price : #757575;
+$orange : #DB8876;
+
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    a {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+    }
+}
+
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+h1 {
+    color: #901C1C;
+    margin-right: 100px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+#photographer_section {
+    display: grid;
+    // grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin: 100px auto;
+    article {
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        img {
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        h2 {
+            color: #D3573C;
+            font-size: 36px;
+            margin: 10px auto;
+        }
+        .photograph-city {
+            color: $city;
+            margin: 0;
+        }
+        .photograph-tagline {
+            margin: 5px;
+        }
+        .photograph-price {
+            color: $price;
+            margin: 0;
+        }
+    }
+}
+
+.footer {
+    .bot-container {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        right: 100px;
+        bottom: 0;
+        background-color: $orange;
+    }
+}

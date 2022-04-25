@@ -1,0 +1,112 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 55, 55, 0.8);
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.lightbox_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  max-height: 95vh;
+  -webkit-animation: lightbox-anim 0.5s;
+          animation: lightbox-anim 0.5s;
+}
+
+@-webkit-keyframes lightbox-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox_close {
+  border: none;
+  text-indent: -3000px;
+  position: fixed;
+  z-index: 12;
+  top: 50px;
+  right: 10%;
+  width: 25px;
+  height: 25px;
+  background: url("/assets/icons/close-lightbox.svg") center center/100% 100% no-repeat transparent;
+  color: #901c1c !important;
+}
+
+.lightbox_next,
+.lightbox_prev {
+  border: none;
+  background: url("/assets/icons/arrow.svg") center center/100% 100%;
+  width: 30px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 10%;
+  margin-top: -14px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  z-index: 11;
+  opacity: 1;
+  text-indent: -3000px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.lightbox_next {
+  left: auto;
+  right: 10%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.lightbox_arrow:hover,
+.lightbox_close:hover {
+  opacity: 0.5;
+}
+
+.lightbox_container img, .lightbox_container video {
+  max-width: 600px;
+  max-height: 600px;
+  background-repeat: no-repeat;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.lightbox_loader {
+  width: 38px;
+  height: 38px;
+  background: url("assets/icons/loader.svg") center center no-repeat;
+}
+/*# sourceMappingURL=lightbox.css.map */

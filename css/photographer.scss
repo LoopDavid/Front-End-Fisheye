@@ -1,0 +1,361 @@
+$city: #901c1c;
+$name: #d3573c;
+$price: #757575;
+$orange: #db8876;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+}
+
+#contact_modal {
+  display: none;
+}
+
+.photograph-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  background-color: #fafafa;
+  height: 300px;
+  margin: 0 100px;
+}
+
+.btn-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_button {
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#photograph-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 30px;
+}
+
+#photograph-h1 {
+  color: #d3573c;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#photograph-city {
+  color: $city;
+  font-size: 20px;
+  margin: 0;
+}
+
+#photograph-price {
+  color: $price;
+  margin: 0;
+}
+#photograph-img {
+  margin: auto;
+  .header-img {
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+// start select btn
+// Btn select style
+// .btn-container {
+//   box-sizing: border-box;
+//   margin: 15px 100px;
+//   display: flex;
+//   h2 {
+//     margin-right: 15px;
+//     font-size: 22px;
+//   }
+//   .contact_button {
+//     height: auto;
+//   }
+// }
+
+// .select-box {
+//   display: flex;
+//   width: 400px;
+//   .contact_button {
+//     padding: 0;
+//   }
+// }
+
+// .select-box .not-active {
+//   max-height: 0;
+//   opacity: 0;
+//   transition: all 0.4s;
+//   overflow: hidden;
+// }
+
+// .selected {
+//   display: flex;
+//   justify-content: space-between;
+//   position: relative;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
+
+// .selected::after {
+//   content: "";
+//   background: url("/assets/icons/arrow.svg");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   position: absolute;
+//   height: 16px;
+//   width: 32px;
+//   right: 10px;
+//   top: 50%;
+//   transform: translate(10%);
+//   rotate: (90deg);
+//   transition: all 0.4s;
+// }
+
+// .select-box .options-container.active {
+//   max-height: 240px;
+//   opacity: 1;
+// }
+
+// .select-box .options-container.active + .selected::after {
+//   transform: rotateX(180deg);
+//   top: -6px;
+// }
+
+// .select-box .option,
+// .selected {
+//   padding: 12px 24px;
+//   cursor: pointer;
+// }
+// .select-box label {
+//   cursor: pointer;
+// }
+
+// .select-box .option .radio {
+//   display: none;
+// }
+
+// end select btn
+
+// last btn
+.container-select {
+  margin: 15px 100px;
+
+  .select-box {
+    width: 240px;
+    position: relative;
+    select {
+      position: relative;
+      padding: 15px;
+      border-radius: 5px;
+      appearance: none;
+    }
+    select option:hover {
+      background-color: white;
+    }
+    select::ms-expand {
+      display: none;
+    }
+    select:focus {
+      outline: none;
+    }
+    i {
+      position: absolute;
+      right: 20px;
+      top: 35px;
+      transform: translateY(-50%);
+      color: white;
+    }
+    select:focus + i {
+    }
+  }
+}
+
+// end btn
+
+#img-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: 0 100px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  .card-img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .card-img:hover {
+    cursor: pointer;
+  }
+  .card-details {
+    display: flex;
+    justify-content: space-between;
+
+    .card-title {
+      color: $city;
+    }
+    .card-likes * {
+      color: $city;
+    }
+    .card-likes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-like {
+      margin-right: 5px;
+    }
+
+    .card-likes:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.bot-container {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  display: flex;
+  justify-content: space-around;
+  background-color: $orange;
+  width: 200px;
+  padding: 5px 25px;
+  border-radius: 5px 5px 0 0;
+  .bot-container_number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bot-container_number * {
+    color: black;
+  }
+  #bottom_number {
+    color: black;
+    margin-right: 5px;
+    font-weight: 500;
+  }
+  #bot-container_price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
+}
+
+.modal header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal header img {
+  cursor: pointer;
+}
+
+.modal header h2 {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+}
+
+#contact-name {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  .contact_button {
+    justify-content: center;
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+    padding: 5px;
+    width: 130px;
+    height: 50px;
+    border: none;
+    background-color: #901c1c;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+form label {
+  color: #312e2e;
+  font-size: 25px;
+  margin: 5px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+}
+
+form input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+#contact-message {
+  height: 130px;
+}
+
+.close {
+  width: 25px;
+}
+
+#bottom_number {
+  color: $city;
+}

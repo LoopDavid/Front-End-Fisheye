@@ -2,35 +2,111 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/lightbox.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8713be4e60.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div id="photograph-details">
+          <h1 id="photograph-h1"></h1>
+          <p id="photograph-city"></p>
+          <p id="photograph-tagline"></p>
+        </div>
+        <div class="btn-header">
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
+        <div id="photograph-img">
+        </div>
       </div>
+
+      <!-- old btn -->
+      <!-- <div class="btn-select">
+        <label for="select">Trier par</label>
+        <select name="trier" id="select" class="contact_button">
+          <option value="popularite">Popularité</option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
+        </select>
+      </div> -->
+
+
+      <!-- new btn -->
+      <!-- <div class="btn-container">
+        <div class="select-box">
+          <h2 class="btn-h2">trier par</h2>
+          <div class="contact_button active">
+            <div class="option selected">
+              <input type="radio" class="radio" id="popularite" name="category">
+              <label for="popularite">Popularite</label>
+            </div>
+            <div class="option not-active">
+              <input type="radio" class="radio" id="date" name="category">
+              <label for="date">Date</label>
+            </div>
+            <div class="option not-active">
+              <input type="radio" class="radio" id="titre" name="category">
+              <label for="titre">Titre</label>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="container-select">
+        <div class="select-box">
+          <span class="label">Trier par</span>
+          <select name="" id="select-btn" class="contact_button">
+            <option value="" id="popularite">Popularité</option>
+            <option value="" id="date">Date</option>
+            <option value="" id="titre">Titre</option>
+          </select>
+          <i class="fa fa-chevron-down"></i>
+        </div>
+      </div>
+      
+
+      <div id="img-container"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
-				<header>
+				<header class="contact-header">
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2 id="contact-name"></h2>
+          <img class="close" src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="contact-prenom">Prénom</label>
+						<input id="contact-prenom"/>
+            <label for="contact-nom">Nom</label>
+						<input id="contact-nom"/>
+            <label for="contact-mail">Email</label>
+						<input id="contact-mail"/>
+            <label for="contact-message">Votre message</label>
+						<input id="contact-message"/>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <footer class="footer">
+      <div class="bot-container">
+        <div class="bot-container_number">
+          <p id="bottom_number"></p>
+          <i class="fas fa-heart" aria-hidden="true"></i>
+        </div>
+        <div id="bot-container_price"></div>
+      </div>
+    </footer>
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/pages/photographer.js" type="module"></script>
+    <script src="scripts/utils/lightbox.js" type="module"></script>
+    <script src="scripts/utils/select-btn.js" type="module"></script>
   </body>
 </html>
